@@ -38,7 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tutorials',
+    'rest_framework',
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -76,10 +81,10 @@ WSGI_APPLICATION = 'vineRestApis.wsgi.application'
 
 DATABASES = {
      'default': {
-        'ENGINE':'django.db.backends.  postgresql',
+         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'vine',
         'USER': 'moringa',
-        'PASSWORD':'@young',
+    'PASSWORD':'@young',
     }
 }
 
