@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'vineRestApis.wsgi.application'
 
 DATABASES = {
      'default': {
-        'ENGINE':'django.db.backends.  postgresql',
+        'ENGINE':'django.db.backends.postgresql',
         'NAME': 'vine',
         'USER': 'moringa',
         'PASSWORD':'@young',
