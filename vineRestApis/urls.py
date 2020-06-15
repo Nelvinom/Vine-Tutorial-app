@@ -14,16 +14,28 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 # from django.contrib import admin
-from django.urls import path,include
-# from Vine.tutorials import  views
+# from django.urls import path,include
+# from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
+# from rest_framework_swagger.views import get_swagger_view
+# from django.conf.urls import url
 
-router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('tutorials/', include('tutorials.urls')),
+#     path(r'api-token-auth/', obtain_jwt_token),
+#     path(r'api-token-refresh/', refresh_jwt_token),
+#     url(r'^$', get_swagger_view(title='Pastebin API')),
+# ]
 
+# from django.conf.urls import include
 
-urlpatterns = [
-    # path('admin/', admin.site.urls),
-    path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+# urlpatterns += [
+#     path('api-auth/', include('rest_framework.urls')),
+# ]
+from django.conf.urls import url, include 
+from django.contrib import admin
+urlpatterns = [ 
+    url(r'^', include('tutorials.urls')),
+    url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^admin/', admin.site.urls),
 ]
